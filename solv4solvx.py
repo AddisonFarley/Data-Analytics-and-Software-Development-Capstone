@@ -11,7 +11,7 @@ Set the key path to the authentication file path.
 Create the authentication credentials.
 Finally, create a Client() object and use your credentials to authenticate and list the project.
 """
-key_path = "set-to-service-account-key-json"
+key_path = "set-to-service-account-key-json-filepath"
 
 credentials = service_account.Credentials.from_service_account_file(
     key_path, scopes=["https://www.googleapis.com/auth/cloud-platform"],
