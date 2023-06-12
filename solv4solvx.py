@@ -11,7 +11,7 @@ Set the key path to the authentication file path.
 Create the authentication credentials.
 Finally, create a Client() object and use your credentials to authenticate and list the project.
 """
-key_path = "set-to-service-account-key-json-filepath"
+key_path = "my-first-may-project-13364-732ec806ab08.json"
 
 credentials = service_account.Credentials.from_service_account_file(
     key_path, scopes=["https://www.googleapis.com/auth/cloud-platform"],
@@ -20,15 +20,15 @@ credentials = service_account.Credentials.from_service_account_file(
 client = bigquery.Client(credentials=credentials, 
 						 project=credentials.project_id)
 
-#note for team: replace xxx with your API Key
-API_KEY = 'xxx'
+#note for team: replace xxxxxx with your API Key
+API_KEY = "cwKmP5I19u3LXurLyq27qkmsU6c0y0MyX6wZYNVH"
 
 #Set your projectID and initialize the BigQuery client
-project_id = 'xxx'
+project_id = 'my-first-may-project-13364'
 
 #Setup dataset and table setup in the BigQuery database, then replace these names with yours
-dataset_id = 'xxx'
-table_id = 'xxx'
+dataset_id = 'eia_solvx'
+table_id = 'eia_electricity'
 
 url = "https://api.eia.gov/v2/electricity/rto/region-data/data/?api_key=" + API_KEY
 
@@ -87,13 +87,16 @@ params = {
     "offset": 0,
     "length": 5000
 }
-#save request in response variable
-response = requests.get(url, params=params)
 
 print("Fetching data")
 
+#save request in response variable
+response = requests.get(url, params=params)
+
 #convert response into json
 json_data = response.json()['response']['data']
+
+print("Transforming data")
 
 #flattening the dataset
 # Convert the nested JSON object to a flat DataFrame
@@ -105,10 +108,11 @@ df.columns = ['date', 'respondent', 'respondent_full', 'type', 'type_full', 'val
 #convert date string to datetime object, match the formatting.
 df['date'] = pd.to_datetime(df['date'], format="%Y-%m-%dT%H")
 
-print("Transforming data")
 print(df)
 
 #imports data
+
+print("Updating BigQuery Database")
 
 #start of the sql statement
 sql = (f"INSERT INTO `{project_id}.{dataset_id}.{table_id}` VALUES ")
@@ -123,7 +127,7 @@ sql = (sql[:-1] + ";")
 #send over the insert statement to BigQuery
 insert_job = client.query(sql)
 
-print("Updating BigQuery Database")
+print("Checking for duplicates")
 
 #code waits 3 seconds for the database to fully update before replacing rows
 time.sleep(3)
@@ -142,7 +146,5 @@ create or replace table `{project_id}.{dataset_id}.{table_id}`  as (
 
 #send dupe check to BigQuery
 insert_job = client.query(sql)
-
-print("Checking for duplicates")
 
 print("Finished")
