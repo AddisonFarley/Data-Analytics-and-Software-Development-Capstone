@@ -7,4 +7,5 @@ Version 1.0
 
 This application runs a script every 24 hours that will pull relevant energy data from the Energy Information Administration (EIA) API, process and clean it, then will send it to a BigQuery database for storage.
 
-![System Diagram](https://github.com/AddisonFarley/SDEV-280-Capstone/assets/93640684/c051718d-115f-45cd-af22-4e090032c5cc)
+![System Diagram](https://github.com/AddisonFarley/SDEV-280-Capstone/assets/93640684/be911ae9-fa23-4860-b27a-48c698645905)
+
