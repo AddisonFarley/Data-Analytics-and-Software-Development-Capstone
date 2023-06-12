@@ -1,4 +1,5 @@
-# SDEV-280-Capstone
+# Data-Analytics-and-Software-Development-Capstone
+
 Capstone project for the Data Analytics and Software Development, Associate of Applied Sciences degree from Green River College.
 
 Authors: Addison Farley, RJ Trenchard, Mason Sain, Will Castillo, Noah Lanctot
