@@ -1,5 +1,5 @@
 """
-Software Development Captsone - SolvX
+Software Development Capstone - SolvX
 
 Authors: Addison Farley, RJ Trenchard, Mason Sain, Will Castillo, Noah Lanctot
 
