@@ -10,7 +10,7 @@ This application runs a script every 24 hours that will pull relevant energy dat
 
 A .env file is required in order for this script to run. 
 
-Copy the below text, fill in the 'xxx' as applicable, and save in the root directory as .env:
+Copy the below text, fill in the "xxx" as applicable, and save in the root directory as .env:
 <br />
 KEY_PATH = "xxx"<br />
 API_KEY = "xxx"<br />
