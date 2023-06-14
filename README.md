@@ -24,8 +24,8 @@ Google Cloud Authentication: https://cloud.google.com/bigquery/docs/authenticati
 Google Cloud BigQuery Service Key JSON: https://console.cloud.google.com/iam-admin/serviceaccounts/<br />
 EIA API Registration: https://www.eia.gov/opendata/
 
-To run this file, you will need to have a Google Cloud account with BigQuery enabled. From Google Cloud, you need to create and download an account service key json (https://console.cloud.google.com/iam-admin/serviceaccounts/) and add that file to your program's root directory.
+To run this application, you will need to have a Google Cloud account with BigQuery enabled. From Google Cloud, you need to create and download an account service key json (https://console.cloud.google.com/iam-admin/serviceaccounts/) and add that file to your program's root directory.
 
-Once the .env file is updated and placed in the root directory, this entire program can be ran via a local machine or a hosted machine 24/7 through main.py.
+Once the .env file is updated and placed in the root directory, the program can be ran through main.py via a local machine or a hosted machine 24/7.
 
 ![System Diagram](https://github.com/AddisonFarley/SDEV-280-Capstone/assets/93640684/be911ae9-fa23-4860-b27a-48c698645905)
