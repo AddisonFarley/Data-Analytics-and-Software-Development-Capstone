@@ -11,19 +11,18 @@ This application runs a script every 24 hours that will pull relevant energy dat
 A .env file is required in order for this script to run. 
 
 Copy the below text, fill in the 'xxx' as applicable, and save in the root directory as .env:
-# for help: https://cloud.google.com/bigquery/docs/authentication/service-account-file
-KEY_PATH = "xxx"
-# for help: https://www.eia.gov/opendata/
-API_KEY = "xxx"
-# name of the BigQuery project
-PROJECT_ID = "xxx"
-# name for the project's dataset
-DATASET_ID = "xxx"
-# name for the dataset's table
+<br />
+KEY_PATH = "xxx"<br />
+API_KEY = "xxx"<br />
+PROJECT_ID = "xxx"<br />
+DATASET_ID = "xxx"<br />
 TABLE_ID = "xxx"
 
-**Notice**
-In order for you to have a valid key path, you will need a Google Cloud service key json in your root directory. If you do not know how to get this, follow the guide linked above the KEY_PATH .env variable.
+Helpful links:
+<br />
+Google Cloud Authentication: https://cloud.google.com/bigquery/docs/authentication/service-account-file<br />
+Google Cloud BigQuery Service Key JSON: https://console.cloud.google.com/iam-admin/serviceaccounts/<br />
+EIA API Registration: https://www.eia.gov/opendata/
 
 To run this file, you will need to have a Google Cloud account with BigQuery enabled. From Google Cloud, you need to create and download an account service key json (https://console.cloud.google.com/iam-admin/serviceaccounts/) and add that file to your program's root directory.
 
